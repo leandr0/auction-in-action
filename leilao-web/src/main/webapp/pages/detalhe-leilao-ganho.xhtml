@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:body>
+		<p:panel header="Leilão" id="panelLeilaoGanho">
+
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Descrição :" />
+				<h:inputText value="#{ui_leilaoganhousuario_bean.leilao.produto.descricao}" disabled="true"/>
+				<h:outputLabel value="Lance Inicial:" />
+				<h:inputText value="#{ui_leilaoganhousuario_bean.leilao.valorInicial}" disabled="true"/>
+				<h:outputLabel value="Data Final:" />
+				<p:calendar mindate="14/02/2011" maxdate="28/02/2011"
+					value="#{ui_leilaoganhousuario_bean.leilao.dataFinal}" showOn="button" disabled="true"/>
+			</h:panelGrid>
+
+			<p:dataTable var="item"
+				value="#{ui_leilaoganhousuario_bean.leilao.produto.itens}" paginator="true"
+				rows="10" id="dataTableItens">
+				<p:column>
+					<f:facet name="header">
+						<h:outputLabel value="Descrição" />
+					</f:facet>
+					<h:outputText value="#{item.descricao}" />
+				</p:column>
+			</p:dataTable>
+			
+		</p:panel>
+		<p:commandButton value="Voltar" onclick="showDivHideDiv('#divListaLeiloesGanhosUsuario' , '#divDetalhamentoLeilaoGanho');"/>
+		
+		
+</h:body>
+</html>

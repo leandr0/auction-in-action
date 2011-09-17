@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/46/trunk/leilao/leilao-web/src/main/webapp/pages
+END
+enviar-lance-leilao.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/webapp/pages/enviar-lance-leilao.xhtml
+END
+lances-usuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/webapp/pages/lances-usuario.xhtml
+END
+detalhe-lance-usuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/pages/detalhe-lance-usuario.xhtml
+END
+leilao-home.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/pages/leilao-home.xhtml
+END
+leiloes-ganhos-usuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/pages/leiloes-ganhos-usuario.xhtml
+END
+chave-servico.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/webapp/pages/chave-servico.xhtml
+END
+detalhe-leilao-ganho.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/pages/detalhe-leilao-ganho.xhtml
+END

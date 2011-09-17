@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreport-boleto-leilao" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="8.0"/>
+	<property name="ireport.x" value="144"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="ID_PRODUTO" class="java.lang.Long">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from item where produto_id = $P{ID_PRODUTO}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Long"/>
+	<field name="DESCRICAO" class="java.lang.String"/>
+	<field name="QUANTIDADE" class="java.lang.Integer"/>
+	<field name="PRODUTO_ID" class="java.lang.Long"/>
+	<columnHeader>
+		<band height="16">
+			<rectangle radius="10">
+				<reportElement x="28" y="0" width="336" height="16"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="129" y="0" width="54" height="16"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="295" y="0" width="56" height="16"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade]]></text>
+			</staticText>
+			<line direction="BottomUp">
+				<reportElement x="287" y="0" width="1" height="16"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement x="36" y="16" width="322" height="1"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="357" y="0" width="1" height="16"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="36" y="0" width="1" height="16"/>
+			</line>
+			<line direction="BottomUp">
+				<reportElement x="287" y="0" width="1" height="16"/>
+			</line>
+			<textField>
+				<reportElement x="49" y="0" width="227" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DESCRICAO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="0" width="56" height="15"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{QUANTIDADE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

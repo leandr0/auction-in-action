@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/44/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean
+END
+ManagerItemBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ManagerItemBean.java
+END
+AbstractDomainBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/AbstractDomainBean.java
+END
+ManagerLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ManagerLanceBean.java
+END
+ItemBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ItemBean.java
+END
+ManagerLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ManagerLeilaoBean.java
+END
+LanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/LanceBean.java
+END
+ManagerUsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ManagerUsuarioBean.java
+END
+ManagerSegurancaBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/ManagerSegurancaBean.java
+END
+AbstractDomain.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/AbstractDomain.java
+END
+LeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/LeilaoBean.java
+END
+UsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/UsuarioBean.java
+END
+SegurancaBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/bean/SegurancaBean.java
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/43/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business
+END
+ManagerFechamentoLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerFechamentoLeilaoBean.java
+END
+FechamentoLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/FechamentoLeilaoBean.java
+END
+ManagerEnviarRelatorioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerEnviarRelatorioBean.java
+END
+ManagerAutorizarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerAutorizarLeilaoBean.java
+END
+ManagerCriarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerCriarLeilaoBean.java
+END
+ManagerEnviarLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerEnviarLanceBean.java
+END
+ManagerAdmLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/ManagerAdmLeilaoBean.java
+END
+EnviarRelatorioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/EnviarRelatorioBean.java
+END
+AutorizarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/AutorizarLeilaoBean.java
+END
+CriarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/CriarLeilaoBean.java
+END
+EnviarLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/EnviarLanceBean.java
+END
+AdmLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/AdmLeilaoBean.java
+END

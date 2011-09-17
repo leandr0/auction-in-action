@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/44/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/exception
+END
+LeilaoDomainArgumentException.java
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/exception/LeilaoDomainArgumentException.java
+END
+LeilaoDomainException.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/44/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/exception/LeilaoDomainException.java
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/report
+END
+GerarRelatorio.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/report/GerarRelatorio.java
+END
+GerarRelatorioBoleto.java
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/report/GerarRelatorioBoleto.java
+END

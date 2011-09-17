@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fc="http://java.sun.com/jsf/composite/fluttercode/component"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/WEB-INF/templates/template.xhtml">
+
+	<ui:define name="content">
+		<h:form prependId="false">
+			<div id="cad-usuario">
+			<p:messages id="messages-cad-usu" showDetail="true"/>			
+			<p:tabView>
+				<p:tab id="personal" title="Dados Pessoais">
+					<p:panel header="Dados Pessoais" id="panel-dados-pessoais">
+							<h:panelGrid columns="4" columnClasses="label, value"
+							styleClass="grid">
+
+							<h:outputLabel value="Nome" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText value="#{cadastrarUsuarioBean.usuario.nome}"
+								immediate="true" />
+
+							<h:outputLabel value="Data Nasc " />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<p:calendar
+								value="#{cadastrarUsuarioBean.usuario.dataNascimento}"
+								immediate="true" showOn="button" showButtonPanel="true"
+								navigator="true">
+								<f:convertDateTime pattern="dd/MM/yyyy" timezone="GMT+3"
+									locale="pt,BR" />
+							</p:calendar>
+
+							<h:outputLabel value="e-mail" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText value="#{cadastrarUsuarioBean.usuario.email}"
+								immediate="true" />
+						</h:panelGrid>
+					</p:panel>
+				</p:tab>
+				<p:tab id="endereco" title="Endereço">
+					<p:panel header="Endereço" id="panel-endereco">
+						<h:panelGrid columns="8" columnClasses="label, value"
+							styleClass="grid">
+
+							<h:outputLabel value="Endereço" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText
+								value="#{cadastrarUsuarioBean.usuario.endereco.endereco}"
+								immediate="true" />
+
+							<h:outputLabel value="Nr" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText
+								value="#{cadastrarUsuarioBean.usuario.endereco.numero}"
+								immediate="true" />
+
+							<h:outputLabel value="Bairro" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText
+								value="#{cadastrarUsuarioBean.usuario.endereco.bairro}"
+								immediate="true" />
+
+							<h:outputLabel value="CEP" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText value="#{cadastrarUsuarioBean.usuario.endereco.cep}"
+								immediate="true" />
+
+							<h:outputLabel value="Município" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText
+								value="#{cadastrarUsuarioBean.usuario.endereco.municipio}"
+								immediate="true" />
+
+							<h:outputLabel value="Estado" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputText
+								value="#{cadastrarUsuarioBean.usuario.endereco.estado}"
+								immediate="true" />
+
+						</h:panelGrid>
+					</p:panel>
+				</p:tab>
+				<p:tab id="contact" title="Segurança">
+					<p:panel header="Segurança" id="panel-seguranca">
+						<h:panelGrid columns="4" columnClasses="label, value">
+							<h:outputLabel value="Perfil" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:selectOneMenu value="#{cadastrarUsuarioBean.usuario.perfil}">
+								<f:selectItem itemValue="COMPRADOR" itemLabel="COMPRADOR" />
+								<f:selectItem itemValue="VENDEDOR" itemLabel="VENDEDOR" />
+							</h:selectOneMenu>
+
+							<h:outputLabel value="Login" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:panelGrid columns="2">
+								<h:inputText
+									value="#{cadastrarUsuarioBean.usuario.seguranca.login}"
+									immediate="true" />
+
+								<p:commandButton title="Verificar disponibilidade de login"
+									value="?"
+									action="#{cadastrarUsuarioBean.verificarDisponibilidadeLogin}"
+									update="messages-cad-usu" />
+							</h:panelGrid>
+							<h:outputLabel value="Senha" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputSecret
+								value="#{cadastrarUsuarioBean.usuario.seguranca.senha}"
+								immediate="true" />
+
+							<h:outputLabel value="Conf. Senha" />
+							<h:outputLabel value=":" />
+							<h:outputLabel value="*" style="color:red" />
+							<h:inputSecret value="#{cadastrarUsuarioBean.confirmSenha}"
+								immediate="true" />
+
+						</h:panelGrid>
+
+						<p:commandButton value="Cadastrar" id="button-salvar-usuario"
+							action="#{cadastrarUsuarioBean.salvarUsuario}"
+							update="panel-dados-pessoais , panel-seguranca ,panel-endereco,messages-cad-usu" />
+					</p:panel>
+				</p:tab>
+			</p:tabView>
+			
+			<p:commandButton value="Limpar Dados" id="button-reset-usuario"
+							action="#{cadastrarUsuarioBean.cadastrarNovoUsuario}"
+							update="panel-dados-pessoais , panel-seguranca ,panel-endereco,messages-cad-usu" />			
+			</div>
+			
+		</h:form>
+	</ui:define>
+</ui:composition>

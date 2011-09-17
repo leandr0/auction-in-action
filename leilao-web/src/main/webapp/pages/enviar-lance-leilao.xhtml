@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:f="http://java.sun.com/jsf/core"
+       xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+       xmlns:fc="http://java.sun.com/jsf/composite/fluttercode/component"
+       xmlns:p="http://primefaces.prime.com.tr/ui"
+       template="/WEB-INF/templates/leilao-template.xhtml">
+
+       <ui:define name="content">
+
+               <p:dialog modal="true" widgetVar="statusDialog" header="Status"
+                       draggable="false" closable="false">
+                       <p:graphicImage value="/resources/images/ajax-load-gears.gif" />
+               </p:dialog>
+
+
+               <h:form prependId="false">
+
+                       <div id="divLeiloes">
+                               <p:panel header="Leilões" id="panelLeiloesAtivos">
+
+                               <p:dataTable rendered="#{!empty ui_enviarLance_bean.leiloesAtivos}"
+                                       var="leilao" value="#{ui_enviarLance_bean.leiloesAtivos}"
+                                       paginator="true" rows="10" id="dataTableLeiloes">
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Leilao" />
+                                               </f:facet>
+                                               <h:outputText value="#{leilao.produto.descricao}" />
+                                       </p:column>
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Data Limite" />
+                                               </f:facet>
+                                               <h:outputText value="#{leilao.dataFinal}" >
+                                                       <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                               </h:outputText>
+                                       </p:column>
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Valor Inicial" />
+                                               </f:facet>
+                                               <h:outputText value="#{leilao.valorInicial}" />
+                                       </p:column>
+
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Ação" />
+                                               </f:facet>
+                                               <p:commandButton action="#{ui_enviarLance_bean.selecionarLeilao}"
+                                                       value="Selecionar" update="panelLeilao"
+                                                       oncomplete="showDivHideDiv('#divLeilao','#divLeiloes');" >
+                                                       <f:param name="leilaoAction" value="#{leilao.id}" />
+                                               </p:commandButton>
+                                       </p:column>
+                               </p:dataTable>
+                       </p:panel>
+                       </div>
+
+                       <div id="divLeilao" style="display: none;">
+                       <p:panel id="panelLeilao">
+                               <h:panelGrid columns="2">
+                                       <h:column>
+                                               <h:outputLabel value="Descrição :" />
+                                       </h:column>
+                                       <h:column>
+                                               <h:outputText value="#{ui_enviarLance_bean.leilao.produto.descricao}" />
+                                       </h:column>
+                                       <h:column>
+                                               <h:outputLabel value="Valor Inicial :" />
+                                       </h:column>
+                                       <h:column>
+                                               <h:outputText value="#{ui_enviarLance_bean.leilao.valorInicial}" />
+                                       </h:column>
+                               </h:panelGrid>
+                               <p:dataTable var="item"
+value="#{ui_enviarLance_bean.leilao.produto.itens}" paginator="true"
+                                       rows="10">
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Descrição" />
+                                               </f:facet>
+                                               <h:outputText value="#{item.descricao}" />
+                                       </p:column>
+                                       <p:column>
+                                               <f:facet name="header">
+                                                       <h:outputLabel value="Quantidade" />
+                                               </f:facet>
+                                               <h:outputText value="#{item.quantidade}" />
+                                       </p:column>
+                               </p:dataTable>
+
+                               <p:commandButton value="Enviar Lance"
+                                       oncomplete="showDivHideDiv('#divEnviarLance' , '#divLeilao');"
+                                       update="panelLance" />
+
+                               <p:commandButton value="Cancelar"
+                                       onclick="showDivHideDiv('#divLeiloes' , '#divLeilao');" />
+
+                       </p:panel>
+               </div>
+                       <div id="divEnviarLance" style="display: none;">
+                       <p:panel id="panelLance">
+                               <h:panelGrid columns="2">
+                                       <h:outputLabel value="Valor do Lance:" />
+                                               <h:inputText value="#{ui_enviarLance_bean.lance.valor}" />
+                                               <p:commandButton action="#{ui_enviarLance_bean.participarLeilao}"
+                                               value="Enviar Lance" update="panelLance , panelLeiloesAtivos ,
+bottomPanel"
+                                               onclick="statusDialog.show();"
+                                               oncomplete="statusDialog.hide(); showDivHideDiv('#divLeiloes' ,
+'#divEnviarLance'); bottomBar.show();" />
+                                       <p:commandButton update="panelLance , panelLeiloesAtivos"
+                                               value="Cancelar"
+                                               oncomplete="showDivHideDiv('#divLeiloes' , '#divEnviarLance');" />
+                               </h:panelGrid>
+                       </p:panel>
+                       </div>
+
+                       <p:notificationBar position="bottom" effect="fade"
+                               widgetVar="bottomBar" styleClass="bottom">
+                               <f:facet name="close">
+                                       <p:graphicImage value="/resources/images/closebar.png" />
+                               </f:facet>
+
+                               <h:panelGroup id="bottomPanel" style="margin-right:200px;">
+                                       <p:messages showDetail="true"/>
+                               </h:panelGroup>
+                       </p:notificationBar>
+
+
+               </h:form>
+       </ui:define>
+</ui:composition>

@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/46/trunk/leilao/leilao-web/src/main/webapp
+END
+cadastro-usuario.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/webapp/cadastro-usuario.xhtml
+END
+home.xhtml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/home.xhtml
+END
+login.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/login.jsp
+END
+autentication-failure.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/webapp/autentication-failure.jsp
+END
+index.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/index.html
+END
+loginError.jsp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/webapp/loginError.jsp
+END

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>leilao</artifactId>
+		<groupId>com.fiap</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.fiap</groupId>
+	<artifactId>leilao-domain</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>ejb</packaging>
+
+	<name>leilao-domain EJB</name>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>javax</groupId>
+			<artifactId>javaee-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+		</dependency>
+		<!-- <dependency> <groupId>org.powermock</groupId> <artifactId>powermock-module-testng</artifactId> 
+			</dependency> <dependency> <groupId>org.powermock</groupId> <artifactId>powermock-api-mockito</artifactId> 
+			</dependency> <dependency> <groupId>org.powermock</groupId> <artifactId>powermock-core</artifactId> 
+			<version>1.4.5</version> <scope>test</scope> </dependency> <dependency> <groupId>org.powermock.modules</groupId> 
+			<artifactId>powermock-module-junit4-rule</artifactId> <version>1.4.5</version> 
+			<scope>test</scope> </dependency> <dependency> <groupId>org.powermock.modules</groupId> 
+			<artifactId>powermock-module-junit4-legacy</artifactId> <version>1.4.5</version> 
+			<scope>test</scope> </dependency> -->
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-annotations</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fiap</groupId>
+			<artifactId>leilao-security</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			<optional>true</optional>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<configuration>
+					<generateClient>true</generateClient>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jboss-maven-plugin</artifactId>
+				<version>1.4.1</version>
+				<configuration>
+					<jbossHome>${JBOSS_HOME}</jbossHome>
+					<serverName>leilao</serverName>
+					<fileName>target/leilao-domain.jar</fileName>
+				</configuration>
+			</plugin>
+
+
+		</plugins>
+
+		<finalName>leilao-domain</finalName>
+	</build>
+
+</project>

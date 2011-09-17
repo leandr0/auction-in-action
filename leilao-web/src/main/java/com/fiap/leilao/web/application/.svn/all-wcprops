@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/46/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application
+END
+UICadastrarUsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UICadastrarUsuarioBean.java
+END
+UILeilaoUsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UILeilaoUsuarioBean.java
+END
+UIGerenciarLeiloesPendentesBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UIGerenciarLeiloesPendentesBean.java
+END
+UIAbstractBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UIAbstractBean.java
+END
+UILeilaoGanhoUsuario.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UILeilaoGanhoUsuario.java
+END
+UIGerenciarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UIGerenciarLeilaoBean.java
+END
+UICriarLeilaoBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UICriarLeilaoBean.java
+END
+UIEnviarLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UIEnviarLanceBean.java
+END
+UILoginBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/49/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UILoginBean.java
+END
+UILanceUsuarioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/48/trunk/leilao/leilao-web/src/main/java/com/fiap/leilao/web/application/UILanceUsuarioBean.java
+END

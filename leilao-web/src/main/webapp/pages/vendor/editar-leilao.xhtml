@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+	<h:body>
+		<div id="leilao">
+			<p:panel header="Dados Leilão" id="panelLeilao">
+				<h:panelGrid columns="2" rendered="#{ ui_gerenciarleilao_bean.leilao != null}">
+					<h:outputLabel value="Descrição :" />
+					<h:inputText value="#{ui_gerenciarleilao_bean.leilao.produto.descricao}" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}"/>
+					<h:outputLabel value="Lance Inicial:" />
+					<h:inputText value="#{ui_gerenciarleilao_bean.leilao.valorInicial}" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}"/>
+					<h:outputLabel value="Data Final:" />
+					<p:calendar 
+						value="#{ui_gerenciarleilao_bean.leilao.dataFinal}"
+						showOn="button" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}" />
+				</h:panelGrid>
+
+				<p:commandButton value="Salvar Leilão"
+					action="#{ui_gerenciarleilao_bean.atualizarLeilao}"
+					update="panelLeilao , dataTableItens , bottomPanel , panelLeiloesUsuario"
+					onclick="showDivHideDiv('#divListaLeiloesUsuario' , '#divEditarLeilao');" 
+					oncomplete="bottomBar.show();" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}"/>
+
+				<p:commandButton value="Voltar" onclick="showDivHideDiv('#divListaLeiloesUsuario' , '#divEditarLeilao');" />
+				
+
+			</p:panel></div>
+			<h:panelGroup id="bottomEditPanel" style="margin-right:200px;">
+					<p:messages showDetail="true" />
+			</h:panelGroup>
+			<div id="toolbar">
+			<p:toolbar id="toolbar-editar-leilao">
+				<p:toolbarGroup align="left">
+					<p:commandButton type="push" value="Novo Item" image="ui-icon-document" 
+							oncomplete="showDivHideDiv('#item','#listaItens');showDivHideDiv('#div-acao-novo-item','#div-acao-editar-item');" 
+							update="panelItem , bottomEditPanel" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}" 
+							action="#{ui_gerenciarleilao_bean.clear}"/>
+					<p:divider />
+					<p:commandButton type="push" title="Delete" image="ui-icon-trash" action="#{ui_gerenciarleilao_bean.removerItem}" 
+					update="dataTableItens , bottomPanel , bottomEditPanel" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}" oncomplete="bottomBar.show();"/>
+				</p:toolbarGroup>
+			</p:toolbar>
+			</div>
+			<div id="listaItens" >
+				<p:dataTable var="item" value="#{ui_gerenciarleilao_bean.leilao.produto.itens}"
+							paginator="true" rows="10" id="dataTableItens" >
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="" />
+						</f:facet>
+						<h:selectBooleanCheckbox value="#{item.select}" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}"/>
+					</p:column>		
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Descrição" />
+						</f:facet>
+						<h:outputText value="#{item.descricao}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Quantidade" />
+						</f:facet>
+						<h:outputText value="#{item.quantidade}" />
+					</p:column>
+					<p:column>
+						<f:facet name="header">
+							<h:outputLabel value="Ação" />
+						</f:facet>
+						<p:commandButton type="push" title="Editar" image="ui-icon-pencil" action="#{ui_gerenciarleilao_bean.editarItem}"
+								onclick="showDivHideDiv('#item','#listaItens');showDivHideDiv('#div-acao-editar-item','#div-acao-novo-tem');"
+								update="panelItem , bottomPanel , bottomEditPanel" disabled="#{!ui_gerenciarleilao_bean.permitidoEditar}" >
+							<f:param name="itemLeilao" value="#{item.id}"/>
+						</p:commandButton>
+					</p:column>					
+					
+				</p:dataTable>
+			</div>
+			<div id="item" style="display: none;">
+				<p:panel header="Novo Item" id="panelItem" >
+					<h:panelGrid columns="2">
+						<h:outputLabel value="Descrição :" />
+						<h:inputText value="#{ui_gerenciarleilao_bean.item.descricao}" id="descItem" />
+						<h:outputLabel value="Quantidade :" />
+						<h:inputText value="#{ui_gerenciarleilao_bean.item.quantidade}" id="qntdItem" />
+					</h:panelGrid>
+				</p:panel> 
+			</div>
+			<div id="div-acao-novo-item" style="display: none;">
+				<p:commandButton value="Adicionar Item"
+					action="#{ui_gerenciarleilao_bean.adicionarItem}"
+					oncomplete="showDivHideDiv('#listaItens','#item');hideDiv('#div-acao-novo-item');"
+					update="panelItem , dataTableItens ,bottomEditPanel" />
+				<p:commandButton title="Voltar" value="Voltar" onclick="showDivHideDiv('#listaItens','#item');hideDiv('#div-acao-novo-item');"/>
+			</div>
+			
+			<div id="div-acao-editar-item" style="display: none;">
+				<p:commandButton value="Salvar Item"
+					action="#{ui_gerenciarleilao_bean.atualizarItem}"
+					oncomplete="showDivHideDiv('#listaItens','#item');hideDiv('#div-acao-editar-item');"
+					update="panelItem , dataTableItens , bottomEditPanel" />
+				<p:commandButton title="Voltar" value="Voltar" onclick="showDivHideDiv('#listaItens','#item');hideDiv('#div-acao-editar-item');"/>
+			</div>
+
+			<p:notificationBar position="bottom" effect="fade"
+				widgetVar="bottomBar" styleClass="bottom" >
+				<f:facet name="close">
+					<p:graphicImage value="/resources/images/closebar.png" />
+				</f:facet>
+
+				<h:panelGroup id="bottomPanel" style="margin-right:200px;">
+					<p:messages showDetail="true" />
+				</h:panelGroup>
+			</p:notificationBar>
+
+</h:body>
+</html>

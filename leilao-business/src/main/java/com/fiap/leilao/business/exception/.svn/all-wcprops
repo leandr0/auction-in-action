@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/30/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception
+END
+LeilaoBusinessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception/LeilaoBusinessException.java
+END
+FinalizarLeilaoBusinessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception/FinalizarLeilaoBusinessException.java
+END
+LeilaoBusinessArgumentException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception/LeilaoBusinessArgumentException.java
+END
+EnviarMensagemBusinessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception/EnviarMensagemBusinessException.java
+END
+GerarRelatorioBusinessException.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/exception/GerarRelatorioBusinessException.java
+END

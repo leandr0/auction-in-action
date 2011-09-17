@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>leilao</artifactId>
+		<groupId>com.fiap</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.fiap</groupId>
+	<artifactId>leilao-security</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>leilao-security</name>
+	<url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.security</groupId>
+			<artifactId>jboss-security-spi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.security</groupId>
+			<artifactId>authorization-spi</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.security</groupId>
+			<artifactId>jbosssx</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<build>
+		<finalName>leilao-security</finalName>
+	</build>	
+</project>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/42/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message
+END
+ManagerEnviarSolicitacaoRelatorioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/ManagerEnviarSolicitacaoRelatorioBean.java
+END
+EnviarMessageLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/EnviarMessageLanceBean.java
+END
+EnviarSolicitacaoRelatorioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/EnviarSolicitacaoRelatorioBean.java
+END
+ManagerListenerMessageRelatorioBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/ManagerListenerMessageRelatorioBean.java
+END
+ManagerEnviarMessageLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/ManagerEnviarMessageLanceBean.java
+END
+ResourceAdapterMessage.java
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/ResourceAdapterMessage.java
+END
+ManagerListenerMessageLanceBean.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/message/ManagerListenerMessageLanceBean.java
+END

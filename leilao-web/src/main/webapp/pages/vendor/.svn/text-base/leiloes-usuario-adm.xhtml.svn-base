@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fc="http://java.sun.com/jsf/composite/fluttercode/component"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/WEB-INF/templates/leilao-template.xhtml">
+	
+	<ui:define name="content">
+	
+		<p:dialog modal="true" widgetVar="statusDialog" header="Status" 
+        				draggable="false" closable="false">
+				<p:graphicImage value="/resources/images/ajax-load-gears.gif" />
+			</p:dialog>
+	
+		<h:form prependId="false">
+			<p:messages showDetail="true" id="message-leilao-usu-adm"/>
+			<div id="divListaLeiloesUsuario" >
+				<p:panel header="Leilões" id="panelLeiloesUsuario">    
+					<p:dataTable 
+						rendered="#{!empty ui_gerenciarleilao_bean.leiloes}"
+						var="leilao" value="#{ui_gerenciarleilao_bean.leiloes}" 
+						paginator="true" rows="10"
+						id="dataTableLeiloes">
+				        <p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Leilão" />
+				            </f:facet>
+				            <h:outputText value="#{leilao.produto.descricao}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Status" />
+				            </f:facet>
+				            <h:outputText value="#{leilao.status}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Data Limite" />
+				            </f:facet>
+				            <h:outputText value="#{leilao.dataFinal}" >
+				            	<f:convertDateTime pattern="dd/MM/yyyy"/>
+				            </h:outputText>
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Valor Inicial" />
+				            </f:facet>
+				            <h:outputText value="#{leilao.valorInicial}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Ação" />
+				            </f:facet>
+				            <p:commandButton value="Alterar" action="#{ui_gerenciarleilao_bean.selecionarLeilao}"
+				            	oncomplete="showDivHideDiv('#divEditarLeilao','#divListaLeiloesUsuario');" 
+				            	update="panelLeilao , dataTableItens , toolbar-editar-leilao , bottomEditPanel">
+				            	<f:param name="leilaoUsuario" value="#{leilao.id}"/>
+				            </p:commandButton>
+				            <p:commandButton value="Cancelar" action="#{ui_gerenciarleilao_bean.cancelarLeilao}"
+				            	update="panelLeiloesUsuario , dataTableItens , message-leilao-usu-adm">
+				            	<f:param name="leilaoUsuarioCancelar" value="#{leilao.id}"/>
+				            </p:commandButton>
+						</p:column>
+					</p:dataTable>
+				</p:panel>
+			</div>	
+			<div id="divEditarLeilao" style="display:none;">
+				<ui:include src="editar-leilao.xhtml" />
+			</div>	
+		</h:form>
+		
+	</ui:define>
+</ui:composition>		

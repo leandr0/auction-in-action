@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Leilão FIAP</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/screen.css" />
+	<h:outputScript name="commons.js" library="javascript"/>
+</h:head>
+<h:body>
+	<h:panelGroup id="page" layout="block">
+
+		<h:panelGroup id="header" layout="block">
+			<h1><a href="home.jsf">Leilão FIAP</a></h1>
+			<small>#{dataStatus}</small>
+		</h:panelGroup>
+		<h:form prependId="false">
+		<div align="right" style="color:blue;font-weight:bolder;font-size:10px;padding:5px;">
+			<h:outputLabel value="Bem vindo, #{loginBean.nomeUsuario} !" />
+		</div>
+		<p:toolbar>
+			<p:toolbarGroup align="left">
+				<p:menuButton value="Leilão">
+				<p:menuitem action="#{ui_criarLeilao_bean.init}" value="Criar Leilão" icon="ui-icon ui-icon-extlink"/>
+							<p:menuitem value="Enviar Lance" action="#{ui_enviarLance_bean.listarLeiloes}" update="panelLeiloesAtivos" icon="ui-icon ui-icon-extlink"/>
+							<p:menuitem value="Alterar Leilões" action="#{ui_gerenciarleilao_bean.init}" update="panelLeiloesUsuario" icon="ui-icon ui-icon-extlink"/>
+				</p:menuButton>
+				<p:menuButton value="Administração">				
+					<p:menuitem action="#{ui_leilaousuario_bean.carregarLeilaoUsuario}"  value="Meus Leilões" icon="ui-icon ui-icon-gear"/>
+							<p:menuitem action="#{ui_lanceusuario_bean.carregarLanceUsuario}"  value="Meus Lances" icon="ui-icon ui-icon-gear"/>
+							<p:menuitem action="#{ui_leilaoganhousuario_bean.init}"  value="Leilões Ganhos"  icon="ui-icon ui-icon-gear"/>
+							<p:menuitem action="chave-servico"  value="Chave Serviço"  icon="ui-icon ui-icon-gear"/>
+							<p:menuitem action="#{gerenciarLeiloesPendentesBean.init}"  value="Gerenciar Leilões"  icon="ui-icon ui-icon-gear"/>
+				</p:menuButton>	
+			</p:toolbarGroup>
+			<p:toolbarGroup align="right">  
+				<p:commandButton  value="Home" action="leilao-home"
+					icon="ui-icon ui-icon-home" />
+				<p:commandButton value="Logout" 
+					action="#{loginBean.logout}"/>
+			</p:toolbarGroup>
+		</p:toolbar>
+	</h:form>
+		<h:panelGroup layout="block">
+			<ui:insert name="content">Main Content</ui:insert>
+		</h:panelGroup>
+		
+		<h:panelGroup id="footer" layout="block">
+				Trabalho de Conclusão de Curso para a turma 12SCJ<br/> 
+				Instituição <a href="http://www.fiap.com.br">FIAP</a>
+		</h:panelGroup>
+
+	</h:panelGroup>
+</h:body>
+</html>

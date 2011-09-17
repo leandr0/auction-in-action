@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/java/com/fiap/leilao/service/model
+END
+ItemModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/java/com/fiap/leilao/service/model/ItemModel.java
+END
+ServiceModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/java/com/fiap/leilao/service/model/ServiceModel.java
+END
+LeilaoModel.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/java/com/fiap/leilao/service/model/LeilaoModel.java
+END

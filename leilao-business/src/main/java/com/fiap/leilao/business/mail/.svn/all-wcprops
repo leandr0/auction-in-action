@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/42/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail
+END
+HTMLDataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/HTMLDataSource.java
+END
+MailHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/MailHandler.java
+END
+ManagerLeilaoMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/ManagerLeilaoMail.java
+END
+TemplateMessageMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/49/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/TemplateMessageMail.java
+END
+InputStreamDataSource.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/InputStreamDataSource.java
+END
+LeilaoMail.java
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/48/trunk/leilao/leilao-business/src/main/java/com/fiap/leilao/business/mail/LeilaoMail.java
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/44/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain
+END
+Lance.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Lance.java
+END
+Endereco.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Endereco.java
+END
+Leilao.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Leilao.java
+END
+Usuario.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Usuario.java
+END
+Produto.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Produto.java
+END
+QueryLeilaoType.java
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/49/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/QueryLeilaoType.java
+END
+EntityBasic.java
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/21/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/EntityBasic.java
+END
+Item.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/48/trunk/leilao/leilao-domain/src/main/java/com/fiap/leilao/domain/Item.java
+END

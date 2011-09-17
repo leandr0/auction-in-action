@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="criar-leilao::#pages#vendor#criar-leilao.jsf" NAME="output"
+    PATH="/pages/vendor/criar-leilao.jsf"
+    TARGET="rules:#pages#vendor#criar-leilao.jsf" TITLE="criar-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enviar-lance-leilao::#pages#enviar-lance-leilao.jsf"
+    NAME="output1" PATH="/pages/enviar-lance-leilao.jsf"
+    TARGET="rules:#pages#enviar-lance-leilao.jsf"
+    TITLE="enviar-lance-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gerenciar-lance-leilao::#pages#adm#gerenciar-leiloes-pendentes.jsf"
+    NAME="output2" PATH="/pages/adm/gerenciar-leiloes-pendentes.jsf"
+    TARGET="rules:#pages#adm#gerenciar-leiloes-pendentes.jsf"
+    TITLE="gerenciar-lance-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="leilao-home::#pages#leilao-home.jsf"
+    NAME="output3" PATH="/pages/leilao-home.jsf"
+    TARGET="rules:#pages#leilao-home.jsf" TITLE="leilao-home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="leiloes-usuario::#pages#vendor#leiloes-usuario.jsf"
+    NAME="output4" PATH="/pages/vendor/leiloes-usuario.jsf"
+    TARGET="rules:#pages#vendor#leiloes-usuario.jsf"
+    TITLE="leiloes-usuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="cadastrar-usuario::#cadastro-usuario.jsf"
+    NAME="output5" PATH="/cadastro-usuario.jsf"
+    TARGET="rules:#cadastro-usuario.jsf" TITLE="cadastrar-usuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="lances-usuario::#pages#lances-usuario.jsf"
+    NAME="output6" PATH="/pages/lances-usuario.jsf"
+    TARGET="rules:#pages#lances-usuario.jsf" TITLE="lances-usuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="leiloes-ganhos-usuario::#pages#leiloes-ganhos-usuario.jsf"
+    NAME="output7" PATH="/pages/leiloes-ganhos-usuario.jsf"
+    TARGET="rules:#pages#leiloes-ganhos-usuario.jsf"
+    TITLE="leiloes-ganhos-usuario" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="leiloes-usuario-adm::#pages#vendor#leiloes-usuario-adm.jsf"
+    NAME="output8" PATH="/pages/vendor/leiloes-usuario-adm.jsf"
+    TARGET="rules:#pages#vendor#leiloes-usuario-adm.jsf"
+    TITLE="leiloes-usuario-adm" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="chave-servico::#pages#chave-servico.jsf"
+    NAME="output9" PATH="/pages/chave-servico.jsf"
+    TARGET="rules:#pages#chave-servico.jsf" TITLE="chave-servico" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#enviar-lance-leilao.jsf"
+  PATH="/pages/enviar-lance-leilao.jsf" SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#home.jsf" PATH="/home.jsf"
+  SHAPE="304,561,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#lances-usuario.jsf"
+  PATH="/pages/lances-usuario.jsf" SHAPE="304,593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#leiloes-ganhos-usuario.jsf"
+  PATH="/pages/leiloes-ganhos-usuario.jsf" SHAPE="304,593,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#leilao-home.jsf"
+  PATH="/pages/leilao-home.jsf" SHAPE="304,657,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#adm#gerenciar-leiloes-pendentes.jsf"
+  PATH="/pages/adm/gerenciar-leiloes-pendentes.jsf" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#vendor#criar-leilao.jsf"
+  PATH="/pages/vendor/criar-leilao.jsf" SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#cadastro-usuario.jsf"
+  PATH="/cadastro-usuario.jsf" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#vendor#leiloes-usuario.jsf"
+  PATH="/pages/vendor/leiloes-usuario.jsf" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#vendor#leiloes-usuario-adm.jsf"
+  PATH="/pages/vendor/leiloes-usuario-adm.jsf" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#chave-servico.jsf"
+  PATH="/pages/chave-servico.jsf" SHAPE="304,545,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

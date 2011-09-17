@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<context-param>
+		<param-name>facelets.DEVELOPMENT</param-name>
+		<param-value>true</param-value>
+	</context-param>
+
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.jsf</url-pattern>
+	</servlet-mapping>
+
+	<error-page>
+		<error-code>403</error-code>
+		<location>/autentication-failure.jsp</location>
+	</error-page>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Secure Content All</web-resource-name>
+			<url-pattern>/pages/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>VENDEDOR</role-name>
+			<role-name>ADMINISTRADOR</role-name>
+			<role-name>COMPRADOR</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>ADMINISTRADOR</display-name>
+		<web-resource-collection>
+			<web-resource-name>Secure Content Administrador</web-resource-name>
+			<url-pattern>/pages/adm/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>ADMINISTRADOR</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<security-constraint>
+		<display-name>ALL</display-name>
+		<web-resource-collection>
+			<web-resource-name>Secure Content ALL</web-resource-name>
+			<url-pattern>/pages/vendor/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>VENDEDOR</role-name>
+			<role-name>ADMINISTRADOR</role-name>
+		</auth-constraint>
+	</security-constraint>
+
+	<login-config>
+		<auth-method>FORM</auth-method>
+		<form-login-config>
+			<form-login-page>/login.jsp</form-login-page>
+			<form-error-page>/loginError.jsp</form-error-page>
+		</form-login-config>
+	</login-config>
+	<security-role>
+		<role-name>FUNCIONARIO</role-name>
+	</security-role>
+	<security-role>
+		<role-name>GERENTE</role-name>
+	</security-role>
+	<security-role>
+		<role-name>ADMINISTRADOR</role-name>
+	</security-role>
+
+</web-app>

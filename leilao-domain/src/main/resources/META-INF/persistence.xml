@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="leilaoPersistence" transaction-type="JTA">
+		
+		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<jta-data-source>java:LeilaoDS</jta-data-source>
+		
+		<class>com.fiap.leilao.domain.Item</class>
+		<class>com.fiap.leilao.domain.Lance</class>
+		<class>com.fiap.leilao.domain.Leilao</class>
+		<class>com.fiap.leilao.domain.Produto</class>
+		<class>com.fiap.leilao.domain.Usuario</class>
+		<class>com.fiap.leilao.domain.Endereco</class>
+		<class>com.fiap.leilao.domain.security.Seguranca</class>
+	
+		
+	
+		<properties>
+			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+			<property name="jboss.entity.manager.jndi.name" value="leilaoEntityManager"/>
+			<property name="jboss.entity.manager.factory.jndi.name" value="leilaoEntityManagerFactory"/>
+		</properties>
+	</persistence-unit>
+
+</persistence>

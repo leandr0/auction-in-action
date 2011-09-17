@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/45/trunk/leilao/leilao-service/src/main/webapp/WEB-INF
+END
+.faces-config.xml.jsfdia
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/45/trunk/leilao/leilao-service/src/main/webapp/WEB-INF/.faces-config.xml.jsfdia
+END
+leilao-service-spring.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/webapp/WEB-INF/leilao-service-spring.xml
+END
+beans.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/webapp/WEB-INF/beans.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/48/trunk/leilao/leilao-service/src/main/webapp/WEB-INF/web.xml
+END

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ASCII"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:application="http://java.sun.com/xml/ns/javaee/application_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd" version="6">
+  <display-name>leilao-ear</display-name>
+  <module>
+    <ejb>leilao-service.war</ejb>
+  </module>
+  <module>
+    <ejb>leilao-business-0.0.1-SNAPSHOT.ejb</ejb>
+  </module>
+  <module>
+    <ejb>leilao-domain-0.0.1-SNAPSHOT.ejb</ejb>
+  </module>
+  <module>
+    <web>
+      <web-uri>leilao-web.war</web-uri>
+      <context-root>/leilao-web</context-root>
+    </web>
+  </module>
+  <library-directory>lib</library-directory>
+</application>

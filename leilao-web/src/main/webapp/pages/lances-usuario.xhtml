@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+	xmlns:fc="http://java.sun.com/jsf/composite/fluttercode/component"
+	xmlns:p="http://primefaces.prime.com.tr/ui"
+	template="/WEB-INF/templates/leilao-template.xhtml">
+	
+	<ui:define name="content">
+	
+		<p:dialog modal="true" widgetVar="statusDialog" header="Status" 
+        				draggable="false" closable="false">
+				<p:graphicImage value="/resources/images/ajax-load-gears.gif" />
+			</p:dialog>
+	
+		<h:form prependId="false">
+			<p:messages showDetail="true" id="messages-lance"/>
+			<div id="divListaLancesUsuario" >
+				<p:panel header="Lances" id="panelLancesUsuario">    
+					<p:dataTable 
+						rendered="#{!empty ui_lanceusuario_bean.lances}"
+						var="lance" value="#{ui_lanceusuario_bean.lances}" 
+						paginator="true" rows="10"
+						id="dataTableLances">
+				        <p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Leilao" />
+				            </f:facet>
+				            <h:outputText value="#{lance.leilao.produto.descricao}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Data Lance" />
+				            </f:facet>
+				            <h:outputText value="#{lance.dataLance}" >
+									<f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss"/>
+							</h:outputText>
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Status Lance" />
+				            </f:facet>
+				            <h:outputText value="#{lance.status}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Valor Lance" />
+				            </f:facet>
+				            <h:outputText value="#{lance.valor}" />
+						</p:column>
+						<p:column>
+				            <f:facet name="header">
+				                <h:outputLabel value="Ação" />
+				            </f:facet>
+				            <p:commandButton value="Detalhes" action="#{ui_lanceusuario_bean.selecionarLance}"
+				            	oncomplete="showDivHideDiv('#divDetalhamentoLance','#divListaLancesUsuario');"
+				            	update="panelLanceUsuario">
+				            	<f:param name="lanceUsuario" value="#{lance.id}"/>
+				            </p:commandButton>
+				            <p:commandButton value="Cancelar" action="#{ui_lanceusuario_bean.cancelarLance}"
+				            	update="panelLancesUsuario , messages-lance" disabled="#{lance.status == 'CANCELADO'}">
+				            	<f:param name="lanceUsuarioCancelar" value="#{lance.id}"/>
+				            </p:commandButton>
+				            
+						</p:column>
+					</p:dataTable>
+				</p:panel>
+			</div>	
+			<div id="divDetalhamentoLance" style="display:none;">
+				<ui:include src="detalhe-lance-usuario.xhtml" />
+			</div>	
+		</h:form>
+		
+	</ui:define>
+</ui:composition>		

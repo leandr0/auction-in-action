@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules::0" NAME="item" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="criar-leilao::#pages#criar-leilao.jsf"
+    NAME="output" PATH="/pages/criar-leilao.jsf"
+    TARGET="rules:#pages#criar-leilao.jsf" TITLE="criar-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="enviar-lance-leilao::#pages#enviar-lance-leilao.jsf"
+    NAME="output1" PATH="/pages/enviar-lance-leilao.jsf"
+    TARGET="rules:#pages#enviar-lance-leilao.jsf"
+    TITLE="enviar-lance-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT
+    ID="gerenciar-lance-leilao::#pages#gerenciar-leiloes-pendentes.jsf"
+    NAME="output2" PATH="/pages/gerenciar-leiloes-pendentes.jsf"
+    TARGET="rules:#pages#gerenciar-leiloes-pendentes.jsf"
+    TITLE="gerenciar-lance-leilao" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="leilao-home::#leilao-home.jsf"
+    NAME="output3" PATH="/leilao-home.jsf"
+    TARGET="rules:#leilao-home.jsf" TITLE="leilao-home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="leiloes-usuario::#pages#leiloes-usuario.jsf"
+    NAME="output4" PATH="/pages/leiloes-usuario.jsf"
+    TARGET="rules:#pages#leiloes-usuario.jsf" TITLE="leiloes-usuario" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#pages#gerenciar-leiloes-pendentes.jsf"
+  PATH="/pages/gerenciar-leiloes-pendentes.jsf" SHAPE="272,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#enviar-lance-leilao.jsf"
+  PATH="/pages/enviar-lance-leilao.jsf" SHAPE="272,209,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#criar-leilao.jsf"
+  PATH="/pages/criar-leilao.jsf" SHAPE="272,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#leilao-home.jsf" PATH="/leilao-home.jsf"
+  SHAPE="288,465,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#pages#leiloes-usuario.jsf"
+  PATH="/pages/leiloes-usuario.jsf" SHAPE="304,497,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

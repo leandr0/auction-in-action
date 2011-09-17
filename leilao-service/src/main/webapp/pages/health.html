@@ -1,0 +1,68 @@
+<html>
+	<header>
+		<title>Client Service Leilão</title>
+
+		<script language="javascript">  
+		
+				function sendHttpGetRest()
+				{
+					var chave = document.getElementById( "key" ).value;
+					var url = "../services/listarLeilaoLance/" + chave;
+					window.location = url;
+				}
+		
+				function sendHttpGetFinalizar()
+				{
+					var url = "../services/finalizarLeilao";
+					window.location = url;
+				}
+		
+		</script>
+		
+	</header>
+	<body>
+		<div align="left" style="width: 30%">
+			<fieldset>
+				<legend>Enviar Lance Leilão</legend>
+				<form method="POST" name="post-rest" action="../services/enviarLance">
+					<table>
+						<tr>
+							<td>Cód Leilão :</td>
+							<td><input type="text" name="codLeilao" /></td>
+						</tr>
+						<tr>
+							<td>Valor Lance :</td>
+							<td><input type="text" name="vlrLance" /></td>
+						</tr>
+						<tr>
+							<td>Chave Segurança :</td>
+							<td><input type="text" name="chaveSeguranca" /></td>
+						</tr>
+					
+					</table>
+					<input type="submit" name="Submit" value="Enviar">
+				</form>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Listar Leilões para Lance</legend>
+				<form name="get-rest" action="services/listarLeilaoLance">
+					<table>
+						<tr>
+							<td>Chave Segurança :</td>
+							<td><input type="text" id="key" name="chaveSeguranca" /></td>
+						</tr>
+					</table>
+					<input type="button" value="Listar" name="listar" onClick="sendHttpGetRest();"/>
+				</form>
+			</fieldset>
+			
+			<fieldset>
+				<legend>Fechamento Leilões </legend>
+				<form name="get-finalizar" >
+					<input type="button" name="Submit" value="Solicitar" onCLick="sendHttpGetFinalizar();">
+				</form>
+			</fieldset>
+		</div>
+	</body>
+</html>
