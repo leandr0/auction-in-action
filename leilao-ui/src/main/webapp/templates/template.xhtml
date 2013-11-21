@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Auction in Action</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="screen.css" library="css" />
+	<h:outputScript name="commons.js" library="javascript" />
+</h:head>
+<h:body>
+	<h:panelGroup id="page" layout="block">
+
+		<h:panelGroup id="header" layout="block">
+			<h1>
+				<a href="home.jsf">Auction in Action</a>
+			</h1>
+			<small>#{dataStatus}</small>
+		</h:panelGroup>
+		<h:form prependId="false">
+			<p:toolbar>
+				<p:toolbarGroup align="right">
+					<p:commandButton value="Login" action="#{ui_login_bean.login}"
+						title="login" />
+					<p:commandButton value="Cadastrar-se" action="cadastrar-usuario" />
+				</p:toolbarGroup>
+			</p:toolbar>
+		</h:form>
+		<h:panelGroup layout="block">
+			<ui:insert name="content">Main Content</ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+			<a href="http://essit.com.br">ESSIT</a>
+		</h:panelGroup>
+
+
+	</h:panelGroup>
+</h:body>
+</html>

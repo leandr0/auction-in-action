@@ -31,6 +31,7 @@ import com.fiap.leilao.domain.Leilao;
  */
 public class ManagerLeilaoMail implements LeilaoMail {
 
+
 	/**
 	 * 
 	 */
@@ -39,12 +40,17 @@ public class ManagerLeilaoMail implements LeilaoMail {
 	private  Multipart multipart;
 
 	private MimeMessage mailMessage;
+	
+	private static final String MAIL_NAME = "leilaoonline";
+	
+	private static final String MAIL_PROVIDER = "@yahoo.com.br";
 
 	public ManagerLeilaoMail() {
 
 		Properties properties = new Properties();
 		properties.setProperty("mail.smtp.auth", "true");
 		properties.setProperty("mail.smtp.host", "smtp.mail.yahoo.com");
+		properties.setProperty("mail.smtp.port", "587");
 
 		multipart 	= new MimeMultipart();
 		mailMessage = new MimeMessage(Session.getInstance(properties, new LeilaoMailAuthenticator()));
@@ -104,7 +110,7 @@ public class ManagerLeilaoMail implements LeilaoMail {
 		multipart.addBodyPart(bodyMensagem);
 		mailMessage.setContent(multipart);
 		mailMessage.setSentDate(new Date());
-		addEmailFrom("leilao12scj@yahoo.com");
+		addEmailFrom(MAIL_NAME+MAIL_PROVIDER);
 		Transport.send(mailMessage);
 
 		multipart 	= new MimeMultipart();
@@ -121,7 +127,7 @@ public class ManagerLeilaoMail implements LeilaoMail {
 		multipart.addBodyPart(bodyMensagem);
 		mailMessage.setContent(multipart);
 		mailMessage.setSentDate(new Date());
-		addEmailFrom("leilao12scj@yahoo.com");
+		addEmailFrom(MAIL_NAME+MAIL_PROVIDER);
 		Transport.send(mailMessage);
 
 		multipart 	= new MimeMultipart();
@@ -138,7 +144,7 @@ public class ManagerLeilaoMail implements LeilaoMail {
 		multipart.addBodyPart(bodyMensagem);
 		mailMessage.setContent(multipart);
 		mailMessage.setSentDate(new Date());
-		addEmailFrom("leilao12scj@yahoo.com");
+		addEmailFrom(MAIL_NAME+MAIL_PROVIDER);
 		Transport.send(mailMessage);
 
 		multipart 	= new MimeMultipart();
@@ -216,11 +222,11 @@ public class ManagerLeilaoMail implements LeilaoMail {
 	 */
 	static class LeilaoMailAuthenticator extends Authenticator {
 
-		String senha = "!112scj!1";
+		String senha = "!1SystemMail!1";
 
 		public PasswordAuthentication getPasswordAuthentication() {
-			return new PasswordAuthentication("leilao12scj", senha);
+			return new PasswordAuthentication(MAIL_NAME, senha);
 		}
 	}
-
+	
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf13846318832500" configfile="/leilao-web/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="*" x="122" y="754" id="pf13847129035440" outlinks="pf13847129035451 pf13847129035454 pf13847129035455 pf138471290354511" path="*"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/vendor/criar-leilao.jsf" x="338" y="178" id="pf138471290354512" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf13847129035451" path="/pages/vendor/criar-leilao.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/enviar-lance-leilao.jsf" x="122" y="274" id="pf138471290354513" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" path="/pages/enviar-lance-leilao.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/adm/gerenciar-leiloes-pendentes.jsf" x="122" y="1138" id="pf138471290354514" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" path="/pages/adm/gerenciar-leiloes-pendentes.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/leilao-home.jsf" x="338" y="562" id="pf138471290354615" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf13847129035454" path="/pages/leilao-home.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/vendor/leiloes-usuario.jsf" x="338" y="946" id="pf138471290354616" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf13847129035455" path="/pages/vendor/leiloes-usuario.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="cadastro-usuario.jsf" x="122" y="1522" id="pf138471290354617" referenceLink="//@navigationRule.0/@navigationCase.5/@toViewId|" path="/cadastro-usuario.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/lances-usuario.jsf" x="122" y="1906" id="pf138471290354618" referenceLink="//@navigationRule.0/@navigationCase.6/@toViewId|" path="/pages/lances-usuario.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/leiloes-ganhos-usuario.jsf" x="122" y="2290" id="pf138471290354619" referenceLink="//@navigationRule.0/@navigationCase.7/@toViewId|" path="/pages/leiloes-ganhos-usuario.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/vendor/leiloes-usuario-adm.jsf" x="122" y="2674" id="pf138471290354620" referenceLink="//@navigationRule.0/@navigationCase.8/@toViewId|" path="/pages/vendor/leiloes-usuario-adm.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="pages/chave-servico.jsf" x="122" y="3058" id="pf138471290354621" referenceLink="//@navigationRule.0/@navigationCase.9/@toViewId|" path="/pages/chave-servico.jsf"/>
+  <nodes xsi:type="pageflow:PFPage" name="home.jsf" x="338" y="1330" id="pf138471290354622" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf138471290354511" path="/home.jsf"/>
+  <links id="pf13847129035451" target="pf138471290354512" source="pf13847129035440" outcome="criar-leilao" redirect="true"/>
+  <links id="pf13847129035454" target="pf138471290354615" source="pf13847129035440" outcome="leilao-home" redirect="true"/>
+  <links id="pf13847129035455" target="pf138471290354616" source="pf13847129035440" outcome="leiloes-usuario" redirect="true"/>
+  <links id="pf138471290354511" target="pf138471290354622" source="pf13847129035440" outcome="home" redirect="true"/>
+</pageflow:Pageflow>

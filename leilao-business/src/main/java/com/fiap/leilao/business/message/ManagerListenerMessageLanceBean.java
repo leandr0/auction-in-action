@@ -43,7 +43,7 @@ import com.fiap.leilao.domain.bean.LanceBean;
  * a JBoss nos disponibiliza uma anotação para indicar qual recurso
  * será utlizado
  */
-@ResourceAdapter(ResourceAdapterMessage.RESOURCE_ADAPTER)        
+//@ResourceAdapter(ResourceAdapterMessage.RESOURCE_ADAPTER)        
 public class ManagerListenerMessageLanceBean implements MessageListener {
 	
 	/*Bean da camada de domínio*/

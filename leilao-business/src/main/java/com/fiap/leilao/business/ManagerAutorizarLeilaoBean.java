@@ -5,20 +5,15 @@ package com.fiap.leilao.business;
 
 import java.util.List;
 
-import javax.ejb.Asynchronous;
 import javax.ejb.EJB;
 import javax.ejb.Remote;
 import javax.ejb.Stateless;
-import javax.enterprise.event.Event;
-import javax.inject.Inject;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.fiap.leilao.business.event.LeilaoEvent;
 import com.fiap.leilao.business.exception.LeilaoBusinessException;
-import com.fiap.leilao.business.qualifier.AprovarLeilao;
-import com.fiap.leilao.business.qualifier.ReprovarLeilao;
+import com.fiap.leilao.business.message.EnviarMessageMailBean;
 import com.fiap.leilao.domain.Item;
 import com.fiap.leilao.domain.Leilao;
 import com.fiap.leilao.domain.Produto;
@@ -39,13 +34,13 @@ import com.fiap.leilao.domain.type.StatusLeilao;
  * podem demorar , devido a disponibilidade da rede ou mesmo do provedor de e-mail.
  * Assim não prendendo as requisições
  */
-@Asynchronous
+//@Asynchronous
 public class ManagerAutorizarLeilaoBean implements AutorizarLeilaoBean {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -8478803356735916111L;
+	private static final long serialVersionUID = -5444951532545265223L;
 
 	private static final Log LOG = LogFactory.getLog(ManagerAutorizarLeilaoBean.class);
 	
@@ -55,33 +50,8 @@ public class ManagerAutorizarLeilaoBean implements AutorizarLeilaoBean {
 	@EJB
 	private ItemBean itemBean;
 
-	/*
-	 * @Inject - Anotação CDI do JEE 6 que permite injetar
-	 * Um uma classe que que envia e-mail para leilões aprovados
-	 * 
-	 * @AprovarLeilao - Anotação CDI JEE 6 que permite criar qualificadores 
-	 * (@Qualifier) de implemtentações de uma mesma Interface
-	 * 
-	 * Event<?> - cria um observer disponibilizado pelo container para injeção de 
-	 * dependência de acordo com o @Qualifier 
-	 */
-	@Inject
-	@AprovarLeilao
-	private Event<LeilaoEvent> aprovarLeilao;
-	
-	/*
-	 * @Inject - Anotação CDI do JEE 6 que permite injetar
-	 * Um uma classe que que envia e-mail para leilões aprovados
-	 * 
-	 * @ReprovarLeilao - Anotação CDI JEE 6 que permite criar qualificadores 
-	 * (@Qualifier) de implemtentações de uma mesma Interface
-	 * 
-	 * Event<?> - cria um observer disponibilizado pelo container para injeção de 
-	 * dependência de acordo com o @Qualifier 
-	 */
-	@Inject
-	@ReprovarLeilao
-	private Event<LeilaoEvent> reprovarLeilao;
+	@EJB
+	private EnviarMessageMailBean enviarMessageMailBean;
 	
 	/* (non-Javadoc)
 	 * @see com.fiap.leilao.business.AutorizarLeilaoBean#atutorizarLeilao(com.fiap.leilao.domain.Leilao)
@@ -99,16 +69,18 @@ public class ManagerAutorizarLeilaoBean implements AutorizarLeilaoBean {
 			LOG.info("Atualizando status leilao para INICIADO");
 			leilaBean.update(leilao);
 			
+			//send to queue
+			//in the mdb do a async method to send e-mail
+			
 			LOG.info("Chamando Observer para enviar email de aprovacao");
-			aprovarLeilao.fire(new LeilaoEvent(leilao));
+			enviarMessageMailBean.sendMailApproved(leilao);
 			
 		}catch (Throwable e) {
 			LOG.error("Erro ao autorizar leilao", e);
 			throw new LeilaoBusinessException(e);
 		}
-
-
 	}
+
 
 	/*
 	 * (non-Javadoc)
@@ -154,7 +126,7 @@ public class ManagerAutorizarLeilaoBean implements AutorizarLeilaoBean {
 			leilaBean.update(leilao);
 			
 			LOG.info("Chamando Observer para enviar email de rejeicao");
-			reprovarLeilao.fire(new LeilaoEvent(leilao));
+			enviarMessageMailBean.sendMailUnapprived(leilao);
 			
 		}catch (Throwable e) {
 			LOG.error("Erro ao cancelar leilao",e);

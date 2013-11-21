@@ -26,7 +26,7 @@ import org.jboss.ejb3.annotation.ResourceAdapter;
  * podem demorar , devido a disponibilidade da rede ou do broker JMS
  * Assim não prendendo as requisições
  */
-@Asynchronous
+//@Asynchronous
 @Remote(EnviarSolicitacaoRelatorioBean.class)
 @Stateless(mappedName = EnviarSolicitacaoRelatorioBean.JNDI_NAME)
 /*
@@ -34,7 +34,7 @@ import org.jboss.ejb3.annotation.ResourceAdapter;
  * a JBoss nos disponibiliza uma anotação para indicar qual recurso
  * será utlizado
  */
-@ResourceAdapter(EnviarSolicitacaoRelatorioBean.RESOURCE_ADAPTER)  
+//@ResourceAdapter(EnviarSolicitacaoRelatorioBean.RESOURCE_ADAPTER)  
 public class ManagerEnviarSolicitacaoRelatorioBean implements EnviarSolicitacaoRelatorioBean {
 
 	

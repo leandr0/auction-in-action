@@ -7,8 +7,6 @@
       http://java.sun.com/xml/ns/javaee
       http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
 
-
-
    <!-- Write your navigation rules here. You are encouraged to use CDI for creating @Named managed beans. -->
 	<navigation-rule>
 		<navigation-case>
@@ -17,6 +15,19 @@
 			<redirect/>
 		</navigation-case>
 		
+		<navigation-case>
+			<from-outcome>leilao-home</from-outcome>
+			<to-view-id>/pages/leilao-home.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>leiloes-usuario</from-outcome>
+			<to-view-id>/pages/vendor/leiloes-usuario.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+
+<!-- 		
 		<navigation-case>
 			<from-outcome>enviar-lance-leilao</from-outcome>
 			<to-view-id>/pages/enviar-lance-leilao.jsf</to-view-id>
@@ -29,17 +40,9 @@
 			<redirect/>
 		</navigation-case>
 		
-		<navigation-case>
-			<from-outcome>leilao-home</from-outcome>
-			<to-view-id>/pages/leilao-home.jsf</to-view-id>
-			<redirect/>
-		</navigation-case>
 		
-		<navigation-case>
-			<from-outcome>leiloes-usuario</from-outcome>
-			<to-view-id>/pages/vendor/leiloes-usuario.jsf</to-view-id>
-			<redirect/>
-		</navigation-case>
+		
+		
 
 		<navigation-case>
 			<from-outcome>cadastrar-usuario</from-outcome>
@@ -70,11 +73,12 @@
 			<to-view-id>/pages/chave-servico.jsf</to-view-id>
 			<redirect/>
 		</navigation-case>
-		
+		-->
 		<navigation-case>
 			<from-outcome>home</from-outcome>
 			<to-view-id>/home.jsf</to-view-id>
 			<redirect/>
 		</navigation-case>
+		
 	</navigation-rule>
 </faces-config>

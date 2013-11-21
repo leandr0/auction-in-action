@@ -34,7 +34,7 @@ import com.fiap.leilao.domain.exception.LeilaoDomainArgumentException;
  * podem demorar , devido a disponibilidade da rede ou do broker JMS
  * Assim não prendendo as requisições
  */
-@Asynchronous
+//@Asynchronous
 @Remote(EnviarLanceBean.class)
 @Stateless(mappedName = EnviarLanceBean.JNDI_NAME)
 public class ManagerEnviarLanceBean implements EnviarLanceBean {

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:decorate template="/templates/leilao-template.xhtml">
+		<ui:define name="content">
+			<p:dialog modal="true" widgetVar="statusDialog" header="Status"
+				draggable="false" closable="false">
+				<p:graphicImage value="/resources/images/ajax-load-gears.gif" />
+			</p:dialog>
+
+			<h:form id="leiloesGanhosUsuarioForm">
+
+				<div id="divListaLeiloesGanhosUsuario">
+					<p:panel header="Leilões" id="panelLeiloesUsuario">
+						<p:dataTable
+							rendered="#{!empty ui_leilao_ganho_usuario_bean.leiloes}"
+							var="leilao" value="#{ui_leilao_ganho_usuario_bean.leiloes}"
+							paginator="true" rows="10" id="dataTableLeiloes">
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Leilao" />
+								</f:facet>
+								<h:outputText value="#{leilao.produto.descricao}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Dt Fim" />
+								</f:facet>
+								<h:outputText value="#{leilao.dataFinal}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Valor" />
+								</f:facet>
+								<h:outputText value="#{leilao.valorGanhador}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Ação" />
+								</f:facet>
+								<p:commandButton value="Detalhes"
+									action="#{ui_leilao_ganho_usuario_bean.selecionarLeilao}"
+									oncomplete="showDivHideDiv('#divDetalhamentoLeilaoGanho','#divListaLeiloesGanhosUsuario');"
+									update=":leiloesGanhosUsuarioForm:panelLeilaoGanho">
+									<f:param name="leilaoGanho" value="#{leilao.id}" />
+								</p:commandButton>
+							</p:column>
+						</p:dataTable>
+					</p:panel>
+				</div>
+				<div id="divDetalhamentoLeilaoGanho" style="display: none;">
+					<ui:include src="detalhe-leilao-ganho.xhtml" />
+				</div>
+			</h:form>
+
+		</ui:define>
+	</ui:decorate>
+</ui:composition>

@@ -9,7 +9,7 @@
 	<packaging>pom</packaging>
 
 	<properties>
-		<compileSource>1.6</compileSource>
+		<compileSource>1.7</compileSource>
 		<project.build.sourceEncoding>ISO-8859-1</project.build.sourceEncoding>
 		<jboss.home>${JBOSS_HOME}</jboss.home>
 		<jboss.domain>leilao</jboss.domain>
@@ -19,9 +19,9 @@
 		<module>leilao-service</module>
 		<module>leilao-business</module>
 		<module>leilao-domain</module>
-		<module>leilao-web</module>
 		<module>leilao-ear</module>
 		<module>leilao-security</module>
+		<module>leilao-ui</module>
 	</modules>
 
 
@@ -142,7 +142,7 @@
 			<dependency>
 				<groupId>org.primefaces</groupId>
 				<artifactId>primefaces</artifactId>
-				<version>2.2.1</version>
+				<version>4.0</version>
 			</dependency>
 
 			<dependency>
@@ -273,8 +273,8 @@
 	<repositories>
 		<repository>
 			<id>prime-repo</id>
-			<name>Prime Technology Maven Repository</name>
-			<url>http://repository.prime.com.tr</url>
+			<name>PrimeFaces Maven Repository</name>
+			<url>http://repository.primefaces.org</url>
 			<layout>default</layout>
 		</repository>
 		<repository>

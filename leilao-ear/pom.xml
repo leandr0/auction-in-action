@@ -16,48 +16,42 @@
 	<name>leilao-ear EAR</name>
 
 	<dependencies>
-	
+
 		<dependency>
 			<groupId>com.fiap</groupId>
 			<artifactId>leilao-business</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
-		
+		<!-- <dependency> <groupId>org.apache.activemq</groupId> <artifactId>activemq-rar</artifactId> 
+			<version>5.9.0</version> <type>rar</type> </dependency> -->
+
 		<dependency>
 			<groupId>com.fiap</groupId>
 			<artifactId>leilao-domain</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>ejb</type>
 		</dependency>
-		
 		<dependency>
 			<groupId>com.fiap</groupId>
 			<artifactId>leilao-security</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>jar</type>
 		</dependency>
-	
+		<!-- <dependency> <groupId>com.fiap</groupId> <artifactId>leilao-service</artifactId> 
+			<version>0.0.1-SNAPSHOT</version> <type>war</type> <scope>compile</scope> 
+			</dependency> -->
 		<dependency>
 			<groupId>com.fiap</groupId>
-			<artifactId>leilao-service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<type>war</type>
-			<scope>compile</scope>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.fiap</groupId>
-			<artifactId>leilao-web</artifactId>
+			<artifactId>leilao-ui</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
-		 
 	</dependencies>
 
 	<build>
 		<finalName>leilao-ear</finalName>
-	
+
 		<plugins>
 
 			<plugin>
@@ -68,27 +62,23 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-ear-plugin</artifactId>
-				<version>2.4.2</version>
 				<configuration>
 					<version>5</version>
 					<defaultLibBundleDir>lib</defaultLibBundleDir>
 					<applicationXml>${basedir}/target/application.xml</applicationXml>
 					<earSourceDirectory>EarContent</earSourceDirectory>
 					<modules>
+						<!-- <webModule> <groupId>com.fiap</groupId> <artifactId>leilao-service</artifactId> 
+							<contextRoot>/leilao-service</contextRoot> <uri>leilao-service.war</uri> 
+							</webModule> <webModule> <groupId>com.fiap</groupId> <artifactId>leilao-web</artifactId> 
+							<contextRoot>/leilao-web</contextRoot> <uri>leilao-web.war</uri> </webModule> -->
+
 						<webModule>
 							<groupId>com.fiap</groupId>
-							<artifactId>leilao-service</artifactId>
-							<contextRoot>/leilao-service</contextRoot>
-							<uri>leilao-service.war</uri>
+							<artifactId>leilao-ui</artifactId>
+							<contextRoot>/leilao-ui</contextRoot>
+							<uri>leilao-ui.war</uri>
 						</webModule>
-						
-						<webModule>
-							<groupId>com.fiap</groupId>
-							<artifactId>leilao-web</artifactId>
-							<contextRoot>/leilao-web</contextRoot>
-							<uri>leilao-web.war</uri>
-						</webModule>
-						
 					</modules>
 				</configuration>
 			</plugin>
@@ -108,7 +98,7 @@
 
 		</plugins>
 
-		
+
 	</build>
 
 </project>

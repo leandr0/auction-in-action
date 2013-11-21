@@ -38,7 +38,7 @@ import com.fiap.leilao.business.EnviarRelatorioBean;
  * a JBoss nos disponibiliza uma anotação para indicar qual recurso
  * será utlizado
  */
-@ResourceAdapter(ResourceAdapterMessage.RESOURCE_ADAPTER) 
+//@ResourceAdapter(ResourceAdapterMessage.RESOURCE_ADAPTER) 
 public class ManagerListenerMessageRelatorioBean implements MessageListener {
 
 	/*Bean que gera o relatório e envia por e-mail */

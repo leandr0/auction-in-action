@@ -27,7 +27,7 @@ public abstract class AbstractDomainBean<E extends EntityBasic<?>> implements Ab
 	@PersistenceContext
 	protected EntityManager entityManager;
 	
-	@Resource(mappedName = "java:LeilaoDS")
+	@Resource(mappedName = "java:jboss/datasources/LeilaoDS")
 	protected DataSource dataSource;
 
 	/*

@@ -1,0 +1,71 @@
+ <html xmlns="http://www.w3c.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<h:outputStylesheet name="css/screen.css" />
+	<h:outputScript name="commons.js" library="javascript" />
+
+</h:head>
+<h:body>
+
+	<h:panelGroup id="page" layout="block">
+
+		<h:panelGroup id="header" layout="block">
+			<h1>
+				<a href="home.jsf">Auction in Action</a>
+			</h1>
+			<small>#{dataStatus}</small>
+		</h:panelGroup>
+		<h:form prependId="false">
+			<div align="right"
+				style="color: blue; font-weight: bolder; font-size: 10px; padding: 5px;">
+				<h:outputLabel value="Bem vindo, #{ui_login_bean.nomeUsuario} !" />
+			</div>
+			<p:toolbar>
+				<p:toolbarGroup align="left">
+					<p:menuButton value="Leilão">
+						<p:menuitem action="#{ui_criar_leilao_bean.init}"
+							value="Criar Leilão" icon="ui-icon ui-icon-extlink" />
+						<p:menuitem value="Enviar Lance" icon="ui-icon ui-icon-extlink"
+							action="#{ui_enviar_lance_bean.listarLeiloes}"
+							process="panelLeilao" ajax="false" />
+						<p:menuitem value="Alterar Leilões"
+							action="#{ui_gerenciar_leilao_bean.init}"
+							process="panelLeiloesUsuario" ajax="false"
+							icon="ui-icon ui-icon-extlink" />
+					</p:menuButton>
+					<p:menuButton value="Administração">
+						<p:menuitem
+							action="#{ui_leilao_usuario_bean.carregarLeilaoUsuario}"
+							value="Meus Leilões" icon="ui-icon ui-icon-gear" />
+						<p:menuitem action="#{ui_lance_usuario_bean.carregarLanceUsuario}"
+							value="Meus Lances" icon="ui-icon ui-icon-gear" />
+						<p:menuitem action="#{ui_leilao_ganho_usuario_bean.init}"
+							value="Leilões Ganhos" icon="ui-icon ui-icon-gear" />
+						<p:menuitem action="chave-servico" value="Chave Serviço"
+							icon="ui-icon ui-icon-gear" />
+						<p:menuitem action="#{ui_gerenciar_leiloes_pendentes_bean.init}" 
+						value="Gerenciar Leilões" icon="ui-icon ui-icon-gear" />
+					</p:menuButton>
+				</p:toolbarGroup>
+				<p:toolbarGroup align="right">
+					<p:commandButton value="Home" icon="ui-icon ui-icon-home" action="leilao-home"/>
+					<p:commandButton value="Logout" action="#{ui_login_bean.logout}" />
+				</p:toolbarGroup>
+			</p:toolbar>
+		</h:form>
+
+		<h:panelGroup layout="block">
+			<ui:insert name="content">Main Content</ui:insert>
+		</h:panelGroup>
+
+		<h:panelGroup id="footer" layout="block">
+			<a href="http://essit.com.br">ESSIT</a>
+		</h:panelGroup>
+
+	</h:panelGroup>
+
+</h:body>
+</html>

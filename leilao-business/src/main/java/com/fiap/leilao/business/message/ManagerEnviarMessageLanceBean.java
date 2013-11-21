@@ -19,6 +19,7 @@ import javax.jms.TextMessage;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.jboss.ejb3.annotation.ResourceAdapter;
+//import org.jboss.annotation.ejb.ResourceAdapter;
 
 import com.fiap.leilao.business.exception.EnviarMensagemBusinessException;
 
@@ -32,7 +33,7 @@ import com.fiap.leilao.business.exception.EnviarMensagemBusinessException;
  * para um leilão é assícrono não e necessário aguardar por todo o processo
  * de envio da mensagem
  */
-@Asynchronous
+//@Asynchronous
 @Remote(EnviarMessageLanceBean.class)
 @Stateless(mappedName = EnviarMessageLanceBean.JNDI_NAME)
 /*
@@ -40,7 +41,7 @@ import com.fiap.leilao.business.exception.EnviarMensagemBusinessException;
  * a JBoss nos disponibiliza uma anotação para indicar qual recurso
  * será utlizado
  */
-@ResourceAdapter(EnviarMessageLanceBean.RESOURCE_ADAPTER)        
+//@ResourceAdapter(EnviarMessageLanceBean.RESOURCE_ADAPTER)        
 public class ManagerEnviarMessageLanceBean implements EnviarMessageLanceBean {
 
 	@Resource(mappedName = EnviarMessageLanceBean.JNDI_CONNECTION_FACTORY)

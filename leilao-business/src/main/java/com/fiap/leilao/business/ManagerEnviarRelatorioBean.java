@@ -39,7 +39,7 @@ public class ManagerEnviarRelatorioBean implements EnviarRelatorioBean {
 	
 	private static final Log LOG = LogFactory.getLog(ManagerEnviarRelatorioBean.class);
 
-	@Resource(mappedName = "java:LeilaoDS")
+	@Resource(mappedName = "java:jboss/datasources/LeilaoDS")
 	protected DataSource dataSource;
 
 	/*Bean da camada de domínio*/

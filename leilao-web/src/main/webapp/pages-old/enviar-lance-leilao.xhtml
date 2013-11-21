@@ -5,9 +5,8 @@
        xmlns:h="http://java.sun.com/jsf/html"
        xmlns:fn="http://java.sun.com/jsp/jstl/functions"
        xmlns:fc="http://java.sun.com/jsf/composite/fluttercode/component"
-       xmlns:p="http://primefaces.prime.com.tr/ui"
-       template="/WEB-INF/templates/leilao-template.xhtml">
-
+       xmlns:p="http://primefaces.org/ui">
+<ui:decorate template="/templates/leilao-template.xhtml">
        <ui:define name="content">
 
                <p:dialog modal="true" widgetVar="statusDialog" header="Status"
@@ -133,4 +132,5 @@ bottomPanel"
 
                </h:form>
        </ui:define>
+       </ui:decorate>
 </ui:composition>

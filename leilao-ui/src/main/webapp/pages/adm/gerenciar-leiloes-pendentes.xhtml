@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+	<ui:decorate template="/templates/leilao-template.xhtml">
+		<ui:define name="content">
+
+			<p:dialog modal="true" widgetVar="statusDialog" header="Status"
+				draggable="false" closable="false">
+				<p:graphicImage value="/resources/images/ajax-load-gears.gif" />
+			</p:dialog>
+
+			<h:form id="gerenciarLeiloesPendentesForm">
+				<p:messages showDetail="true" id="messages-adm-leilao" />
+				<div id="divListaLeiloes">
+					<p:panel header="Leilões" id="panelLeiloesPendentes">
+						<p:dataTable
+							rendered="#{!empty ui_gerenciar_leiloes_pendentes_bean.leiloesPendentes}"
+							var="leilao"
+							value="#{ui_gerenciar_leiloes_pendentes_bean.leiloesPendentes}"
+							paginator="true" rows="10" id="dataTableLeiloes">
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Leilao" />
+								</f:facet>
+								<h:outputText value="#{leilao.produto.descricao}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Data Limite" />
+								</f:facet>
+								<h:outputText value="#{leilao.dataFinal}">
+									<f:convertDateTime pattern="dd/MM/yyyy" />
+								</h:outputText>
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Valor Inicial" />
+								</f:facet>
+								<h:outputText value="#{leilao.valorInicial}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Ação" />
+								</f:facet>
+								<p:commandButton
+									action="#{ui_gerenciar_leiloes_pendentes_bean.selecionarLeilao}"
+									value="Selecionar" update=":gerenciarLeiloesPendentesForm:panelEditarLeilao"
+									oncomplete="showDivHideDiv('#divEditar','#divListaLeiloes');">
+									<f:param name="leilaoAction" value="#{leilao.id}" />
+								</p:commandButton>
+							</p:column>
+						</p:dataTable>
+					</p:panel>
+				</div>
+
+				<div id="divEditar" style="display: none;">
+					<p:panel id="panelEditarLeilao">
+						<h:panelGrid columns="2">
+							<h:column>
+								<h:outputLabel value="Descrição :" />
+							</h:column>
+							<h:column>
+								<h:outputText
+									value="#{ui_gerenciar_leiloes_pendentes_bean.leilao.produto.descricao}" />
+							</h:column>
+							<h:column>
+								<h:outputLabel value="Valor Inicial :" />
+							</h:column>
+							<h:column>
+								<h:outputText
+									value="#{ui_gerenciar_leiloes_pendentes_bean.leilao.valorInicial}" />
+							</h:column>
+						</h:panelGrid>
+						<p:dataTable var="item"
+							value="#{ui_gerenciar_leiloes_pendentes_bean.leilao.produto.itens}"
+							paginator="true" rows="10">
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Descrição" />
+								</f:facet>
+								<h:outputText value="#{item.descricao}" />
+							</p:column>
+							<p:column>
+								<f:facet name="header">
+									<h:outputLabel value="Quantidade" />
+								</f:facet>
+								<h:outputText value="#{item.quantidade}" />
+							</p:column>
+
+						</p:dataTable>
+
+						<p:commandButton
+							action="#{ui_gerenciar_leiloes_pendentes_bean.autorizarLeilaoSelecionado}"
+							value="Autorizar" onclick="statusDialog.show();"
+							oncomplete="statusDialog.hide(); showDivHideDiv('#divListaLeiloes' , '#divEditar');"
+							update=":gerenciarLeiloesPendentesForm:panelLeiloesPendentes , :gerenciarLeiloesPendentesForm:messages-adm-leilao" />
+
+						<p:commandButton
+							action="#{ui_gerenciar_leiloes_pendentes_bean.cancelarLeilaoSelecionado}"
+							value="Rejeitar" onclick="statusDialog.show();"
+							oncomplete="statusDialog.hide(); showDivHideDiv('#divListaLeiloes' , '#divEditar');"
+							update=":gerenciarLeiloesPendentesForm:panelLeiloesPendentes , :gerenciarLeiloesPendentesForm:messages-adm-leilao" />
+
+						<p:commandButton value="Cancelar"
+							onclick="showDivHideDiv('#divListaLeiloes' , '#divEditar');" />
+
+					</p:panel>
+				</div>
+
+			</h:form>
+		</ui:define>
+	</ui:decorate>
+</ui:composition>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file is not required if you don't need any extra configuration. -->
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+      http://java.sun.com/xml/ns/javaee
+      http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+
+	<!-- Write your navigation rules here. You are encouraged to use CDI for 
+		creating @Named managed beans. -->
+<!-- Write your navigation rules here. You are encouraged to use CDI for creating @Named managed beans. -->
+	<navigation-rule>
+		<navigation-case>
+			<from-outcome>criar-leilao</from-outcome>
+			<to-view-id>/pages/vendor/criar-leilao.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>leilao-home</from-outcome>
+			<to-view-id>/pages/leilao-home.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>leiloes-usuario</from-outcome>
+			<to-view-id>/pages/vendor/leiloes-usuario.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+ 		
+		<navigation-case>
+			<from-outcome>enviar-lance-leilao</from-outcome>
+			<to-view-id>/pages/enviar-lance-leilao.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>gerenciar-lance-leilao</from-outcome>
+			<to-view-id>/pages/adm/gerenciar-leiloes-pendentes.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+
+		<navigation-case>
+			<from-outcome>cadastrar-usuario</from-outcome>
+			<to-view-id>/cadastro-usuario.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>lances-usuario</from-outcome>
+			<to-view-id>/pages/lances-usuario.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>leiloes-ganhos-usuario</from-outcome>
+			<to-view-id>/pages/leiloes-ganhos-usuario.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>leiloes-usuario-adm</from-outcome>
+			<to-view-id>/pages/vendor/leiloes-usuario-adm.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+		<navigation-case>
+			<from-outcome>chave-servico</from-outcome>
+			<to-view-id>/pages/chave-servico.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+	
+		<navigation-case>
+			<from-outcome>home</from-outcome>
+			<to-view-id>/home.jsf</to-view-id>
+			<redirect/>
+		</navigation-case>
+		
+	</navigation-rule>
+
+
+</faces-config>

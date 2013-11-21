@@ -6,7 +6,7 @@
 	<persistence-unit name="leilaoPersistence" transaction-type="JTA">
 		
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<jta-data-source>java:LeilaoDS</jta-data-source>
+		<jta-data-source>java:jboss/datasources/LeilaoDS</jta-data-source>
 		
 		<class>com.fiap.leilao.domain.Item</class>
 		<class>com.fiap.leilao.domain.Lance</class>
